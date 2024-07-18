@@ -1,9 +1,8 @@
 # 🌊 Microsoft Edge Browser
-This container allows you to use [microsoft edge][msedge] trough another web browser using [kasmvnc][kasm].
+This container allows you to use [microsoft edge][msedge] trough another web browser using [kasmvnc][kasm]. **Note: This image is only compatibile with the amd64 archiecture!**
 
 ## Setup
-To set up the container, you can either use docker-compose or the docker cli. You can also use options and additional settings/mods from linuxserver.io. For updating the container, simply re-pull the image, and deploy it.
-**Note: This image is only compatibile with the amd64 archiecture!**
+To set up the container, you can either use docker-compose or the docker cli. You can also use options and additional settings/mods from linuxserver.io. For updating the container, simply re-pull the image, and deploy it. [Beta][beta_build] and [Dev][dev_build] editions are also availlable!
 
 ### [docker-compose][dcompose] (recommended)
 ```yaml
@@ -66,6 +65,9 @@ To access the container, navigate to the ip address for your machine with the po
 * [http://yourhost:3000/][link]
 * [https://yourhost:3001/][link]
 
+
+[beta_build]: https://github.com/tibor309/edge/tree/beta
+[dev_build]: https://github.com/tibor309/edge/tree/dev
 
 [msedge]: https://www.microsoft.com/en-us/edge
 [kasm]: https://kasmweb.com/kasmvnc
