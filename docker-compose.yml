@@ -1,8 +1,8 @@
 ---
 services:
   msedge:
-    image: ghcr.io/tibor309/edge:latest
-    container_name: microsoft-edge
+    image: ghcr.io/tibor309/edge:beta
+    container_name: microsoft-edge-beta
     security_opt:
       - seccomp:unconfined #optional
     environment:
@@ -10,7 +10,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /msedge:/config
+      - /msedge-beta:/config
     ports:
       - 3000:3000
       - 3001:3001

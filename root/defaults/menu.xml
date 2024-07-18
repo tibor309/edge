@@ -6,7 +6,7 @@
             <command>/usr/bin/xterm</command>
             </action>
         </item>
-        <item label="Microsoft Edge" icon="/usr/share/icons/hicolor/48x48/apps/microsoft-edge.png">
+        <item label="Microsoft Edge" icon="/usr/share/icons/hicolor/48x48/apps/microsoft-edge-beta.png">
             <action name="Execute">
             <command>/usr/bin/wrapped-msedge</command>
             </action>
