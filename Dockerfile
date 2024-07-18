@@ -13,7 +13,7 @@ LABEL org.opencontainers.image.licenses=GPL-3.0
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config"
-ENV TITLE="Microsoft Edge"
+ENV TITLE="Microsoft Edge Beta"
 
 RUN \
   echo "**** add icon ****" && \
