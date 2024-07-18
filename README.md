@@ -1,9 +1,8 @@
 # 🌊 Microsoft Edge Beta
-This is the [beta][msedge-insider] version of the edge browser. This version is updated every two weeks!
+This is the [beta edition][msedge-insider] of the edge browser. This version is updated every every month!
 
 ## Setup
-To use this version, change the docker image tag to `beta`. You can read more about setup options on the [main page][main].
-**Note: This image is only compatibile with the amd64 archiecture!**
+To use this edition, change the docker image tag to `beta`. You can read more about setup options on the [main page][main].
 
 
 [msedge-insider]: https://www.microsoft.com/en-us/edge/download/insider
