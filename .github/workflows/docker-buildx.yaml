@@ -28,6 +28,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/edge:latest
-            ghcr.io/${{ github.repository_owner }}/edge:stable
+          tags: ghcr.io/${{ github.repository_owner }}/edge:dev

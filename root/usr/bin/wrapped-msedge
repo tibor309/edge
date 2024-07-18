@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BIN=/usr/bin/microsoft-edge-stable
+BIN=/usr/bin/microsoft-edge-dev
 
 # Cleanup
 if ! pgrep msedge > /dev/null;then

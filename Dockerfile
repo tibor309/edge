@@ -13,23 +13,23 @@ LABEL org.opencontainers.image.licenses=GPL-3.0
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config"
-ENV TITLE="Microsoft Edge"
+ENV TITLE="Microsoft Edge Dev"
 
 RUN \
   echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/msedge/msedge-stable_logo_256x256.png && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/msedge/msedge-dev_logo_256x256.png && \
   curl -o \
     /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/msedge/msedge-stable_icon_32x32.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/msedge/msedge-dev_icon_32x32.ico && \
   echo "**** install packages ****" && \
   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && \
   install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/ && \
   sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list' && \
   apt-get update && \
   apt-get install -y --no-install-recommends \
-    microsoft-edge-stable && \
+    microsoft-edge-dev && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
