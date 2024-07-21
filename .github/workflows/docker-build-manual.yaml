@@ -15,11 +15,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Login to container registry
+      - name: Login to GitHub container registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: tibor309
           password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and push image
@@ -29,5 +29,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/edge:latest
-            ghcr.io/${{ github.repository_owner }}/edge:stable
+            ghcr.io/tibor309/edge:latest
+            ghcr.io/tibor309/edge:stable
