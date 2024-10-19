@@ -1,10 +1,10 @@
-name: Build image for dev
+name: Scheduled build - dev
 on:
   schedule:
     - cron: "0 0 * * 0"
 
 jobs:
-  Build:
+  rebuild-dev:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
