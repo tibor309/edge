@@ -3,8 +3,29 @@ on:
   [workflow_dispatch]
 
 jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      PKG_VER: ${{ steps.getver.outputs.PKG_VER }}
+    steps:
+      - name: Add package source to APT
+        run: |
+          apt install curl -y
+          curl -vSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+          install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+          sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+          apt update
+
+      - name: Get package version
+        id: getver
+        run: |
+          PKG_VER=$(apt list microsoft-edge-stable | awk -F'[ /]' '/microsoft-edge-stable/ {print $3}')
+          echo "PKG_VER=${PKG_VER}" >> $GITHUB_OUTPUT
+          echo "The package version is $PKG_VER"
+
   rebuild:
     runs-on: ubuntu-latest
+    needs: get-version
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -31,3 +52,4 @@ jobs:
           tags: |
             ghcr.io/tibor309/edge:latest
             ghcr.io/tibor309/edge:stable
+            ghcr.io/tibor309/edge:${{ needs.get-version.outputs.PKG_VER }}
