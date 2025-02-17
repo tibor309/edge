@@ -37,7 +37,7 @@ jobs:
 
   rebuild:
     runs-on: ubuntu-latest
-    needs: [get-date, get-version-dev]
+    needs: [get-date, get-version]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
