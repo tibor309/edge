@@ -18,7 +18,7 @@ jobs:
   get-version:
     runs-on: ubuntu-latest
     outputs:
-      PKG_VER: ${{ steps.getver.outputs.PKG_VER }}
+      PKG_VER: ${{ steps.version.outputs.PKG_VER }}
     steps:
       - name: Add package source to APT
         run: |
@@ -28,7 +28,7 @@ jobs:
           sudo apt-get update
 
       - name: Get package version
-        id: getver
+        id: version
         run: |
           PKG_VER=$(apt list microsoft-edge-beta | awk -F'[ /]' '/microsoft-edge-beta/ {print $3}')
           echo "PKG_VER=${PKG_VER}" >> $GITHUB_OUTPUT
